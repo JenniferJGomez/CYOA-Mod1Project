@@ -5,4 +5,6 @@ class CreateScenesTable < ActiveRecord::Migration[5.2]
       t.text :scene_text
     end
   end
+
+
 end
