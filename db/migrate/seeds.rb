@@ -1,0 +1,1 @@
+Scene.find_or_create_by(scene_text: "Start: You wake up in your room, turn on the TV, and You find yourself in the middle of the zombie apocolypse. What will you do?")
