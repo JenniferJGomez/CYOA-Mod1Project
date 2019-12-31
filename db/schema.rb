@@ -14,10 +14,12 @@ ActiveRecord::Schema.define(version: 2019_12_30_193210) do
 
   create_table "options", force: :cascade do |t|
     t.integer "base_id"
-    t.integer "option_id"
+    t.integer "outcome_id"
+    t.text "option_text"
   end
 
   create_table "scenes", force: :cascade do |t|
+    t.text "title_text"
     t.text "scene_text"
   end
 
