@@ -13,7 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_12_30_193210) do
 
   create_table "options", force: :cascade do |t|
-    t.integer "base_scene"
+    t.integer "base_scene_id"
+    t.integer "next_scene_id"
   end
 
   create_table "scenes", force: :cascade do |t|

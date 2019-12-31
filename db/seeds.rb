@@ -13,16 +13,30 @@ s6 = Scene.create(title_text: "Duck behind car", scene_text: "You hide behind a 
 s7 = Scene.create(title_text: "Fight Back!", scene_text: "You Michonne your way out of the zombie hoard and you survived! ...for now.")
 s8 = Scene.create(title_text: "Death", scene_text: "Ya dead ya dingus! Better luck next time loser.")
 
-s1.options << s2
-s1.options << s3
-s2.options << s1
-s2.options << s8
-s3.options << s4
-s3.options << s5
-s4.options << s1
-s4.options << s8
-s5.options << s6
-s5.options << s7
+
+Option.create(base_scene_id: 1, next_scene_id: 2)
+Option.create(base_scene_id: 1, next_scene_id: 3)
+Option.create(base_scene_id: 2, next_scene_id: 1)
+Option.create(base_scene_id: 2, next_scene_id: 8)
+Option.create(base_scene_id: 3, next_scene_id: 4)
+Option.create(base_scene_id: 3, next_scene_id: 5)
+Option.create(base_scene_id: 4, next_scene_id: 1)
+Option.create(base_scene_id: 4, next_scene_id: 8)
+Option.create(base_scene_id: 5, next_scene_id: 6)
+Option.create(base_scene_id: 5, next_scene_id: 7)
+Option.create(base_scene_id: 6, next_scene_id: 1)
+Option.create(base_scene_id: 6, next_scene_id: 8)
+
+# s1.options << s2
+# s1.options << s3
+# s2.options << s1
+# s2.options << s8
+# s3.options << s4
+# s3.options << s5
+# s4.options << s1
+# s4.options << s8
+# s5.options << s6
+# s5.options << s7
 
 
 
