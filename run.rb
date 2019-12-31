@@ -1,3 +1,5 @@
+require_relative './config/environment.rb' 
+
 def welcome_message
     puts "Welcome to your own Zombie Survival Adventure."
 end
@@ -6,7 +8,7 @@ def will_play?
     puts "Will you survive? Type in yes or no."
     user_input = gets.chomp
     if user_input == "yes"
-        puts "My the odds be ever in your favor..."
+        # helper_method goes here (original method: puts Scene.first.scene_text)
     elsif user_input == "no"
         puts "Suit yourself weakling. Dueces!"
     else
@@ -14,6 +16,7 @@ def will_play?
         will_play?
     end
 end
+
 
 welcome_message
 will_play?
