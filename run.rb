@@ -17,6 +17,16 @@ def will_play?
     end
 end
 
+def start_game
+    puts Scene.first.scene_text
+end
+
+def choose_option
+    user_input = gets.chomp
+    if user_input == "A"
+        puts #options.path_id
+end
+
 
 welcome_message
 will_play?
