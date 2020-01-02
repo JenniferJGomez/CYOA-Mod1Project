@@ -3,6 +3,6 @@ class Scene < ActiveRecord::Base
         foreign_key:
             :base_scene
 
-
+    has_many :choices
 
 end

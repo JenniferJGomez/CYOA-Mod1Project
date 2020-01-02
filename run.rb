@@ -1,4 +1,5 @@
 require_relative './config/environment.rb' 
+require 'pry'
 
 def welcome_message
     puts "Welcome to your own Zombie Survival Adventure."
@@ -10,14 +11,14 @@ def will_play?
     if user_input == "yes"
         start_game
     elsif user_input == "no"
-        end_game
+        exit_game
     else
         puts "It's a yes or no question dumb dumb. Try again!"
         will_play?
     end
 end
 
-def end_game
+def exit_game
     puts "Suit yourself weakling. Dueces!"
 end
 
@@ -25,12 +26,72 @@ def start_game
     puts Scene.first.scene_text
 end
 
+def lose_game
+    death_string = <<EOM
+    *********
+    *************
+   *****     *****
+  ***           ***
+ ***             ***
+ **    0     0    **
+ **               **                  ____
+ ***             ***             //////////
+ ****           ****        ///////////////  
+ *****         *****    ///////////////////
+ ******       ******/////////         |  |
+*********     ****//////               |  |
+*************   **/////*****              |  |
+*************** **///***********          *|  |*
+************************************    ****| <=>*
+*********************************************|<===>* 
+*********************************************| <==>*
+***************************** ***************| <=>*
+******************************* *************|  |*
+********************************** **********|  |*   
+*********************************** *********|  |
+EOM
+    puts death_string
+    # Scene.last.scene_text
+    will_play?
+end
+
+def selects_scene_id
+    # user_input = get.chomp
+    # Option.all.select do |option|
+    #     option.path_id == user_input
+    #         return option.next_scene_id
+    # end
+    Option.all.map do |opt|
+        opt.next_scene_id
+        binding.pry
+    end
+end
+
+def win_or_lose?
+    # user_input = gets.chomp
+    # case user_input
+    # when user_input == "A" || "B"
+    # end
+
+    if selects_scene_id != nil 
+        selects_scene_id
+    else 
+        lose_game 
+        will_play?
+    end
+end
+
+
 # def choose_option
 #     user_input = gets.chomp
-#     if user_input == "A"
-#         puts #options.path_id
+#     case user_input
+#     when == winning_game
+#         puts 
+#     when == losing_game
+#         puts lose_game
+#     end 
 # end
 
-
+selects_scene_id
 welcome_message
 will_play?
