@@ -55,15 +55,16 @@ EOM
     will_play?
 end
 
+def find_next_scene_id
+  Option.all.map {|option| option.next_scene_id}
+end
+
 def selects_scene_id
-    # user_input = get.chomp
-    # Option.all.select do |option|
-    #     option.path_id == user_input
-    #         return option.next_scene_id
-    # end
-    Option.all.map do |opt|
-        opt.next_scene_id
-        binding.pry
+    user_input = gets.chomp
+    Choice.all.select do |choice|
+      choice.name == user_input
+          return choice.option.find_next_scene_id
+        #binding.pry
     end
 end
 
