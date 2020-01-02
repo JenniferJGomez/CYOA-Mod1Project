@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_174342) do
-
-  create_table "choices", force: :cascade do |t|
-    t.string "name"
-    t.text "scene"
-    t.text "option"
-  end
+ActiveRecord::Schema.define(version: 2019_12_30_193210) do
 
   create_table "options", force: :cascade do |t|
     t.integer "base_scene_id"

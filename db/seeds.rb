@@ -27,14 +27,14 @@ option8= Option.create(base_scene_id: 5, next_scene_id: 7)
 option9 = Option.create(base_scene_id: 6, next_scene_id: nil)
 # Option.create(base_scene_id: 6, next_scene_id: 8)
 
-choice1 = Choice.create(name: "Inside", scene: s2, option: option1)
-choice2 = Choice.create(name: "Outside", scene: s3, option: option2)
-choice3 = Choice.create(name: "Baguette", scene: s4, option: option4)
-choice4 = Choice.create(name: "Sword", scene: s5, option: option5)
-choice5 = Choice.create(name: "Hide", scene: s6, option: option7)
-choice6 = Choice.create(name: "Fight", scene: s7, option: option8)
-choice7 = Choice.create(name: "End Me", scene: s8, option: option9)
-choice8 = Choice.create(name: "Try Again", scene: s1, option: option3)
+# choice1 = Choice.create(name: "Inside", scene: s2, option: option1)
+# choice2 = Choice.create(name: "Outside", scene: s3, option: option2)
+# choice3 = Choice.create(name: "Baguette", scene: s4, option: option4)
+# choice4 = Choice.create(name: "Sword", scene: s5, option: option5)
+# choice5 = Choice.create(name: "Hide", scene: s6, option: option7)
+# choice6 = Choice.create(name: "Fight", scene: s7, option: option8)
+# choice7 = Choice.create(name: "End Me", scene: s8, option: option9)
+# choice8 = Choice.create(name: "Try Again", scene: s1, option: option3)
 
 # s1.options << s2
 # s1.options << s3

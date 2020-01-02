@@ -1,6 +1,8 @@
 require_relative './config/environment.rb' 
 require 'pry'
 
+@current_scene = nil
+
 def welcome_message
     puts "Welcome to your own Zombie Survival Adventure."
 end
@@ -10,6 +12,7 @@ def will_play?
     user_input = gets.chomp
     if user_input == "yes"
         start_game
+        play_scene
     elsif user_input == "no"
         exit_game
     else
@@ -23,7 +26,14 @@ def exit_game
 end
 
 def start_game
-    puts Scene.first.scene_text
+    @current_scene = Scene.first
+end
+
+def play_scene
+  puts @current_scene.scene_text
+  @current_scene.next_scenes.each_with_index do |scene, index|
+    puts "Option #{index + 1}: #{scene.title_text}"
+  end
 end
 
 def lose_game
@@ -55,25 +65,16 @@ EOM
     will_play?
 end
 
-def find_next_scene_id
-  Option.all.map {|option| option.next_scene_id}
-end
-
 def selects_scene_id
     user_input = gets.chomp
     Choice.all.select do |choice|
       choice.name == user_input
-          return choice.option.find_next_scene_id
+          return choice.option.scene_id
         #binding.pry
     end
 end
 
 def win_or_lose?
-    # user_input = gets.chomp
-    # case user_input
-    # when user_input == "A" || "B"
-    # end
-
     if selects_scene_id != nil 
         selects_scene_id
     else 
@@ -93,6 +94,6 @@ end
 #     end 
 # end
 
-selects_scene_id
+# selects_scene_id
 welcome_message
 will_play?
