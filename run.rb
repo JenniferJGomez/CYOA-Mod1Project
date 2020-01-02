@@ -8,24 +8,28 @@ def will_play?
     puts "Will you survive? Type in yes or no."
     user_input = gets.chomp
     if user_input == "yes"
-        # helper_method goes here (original method: puts Scene.first.scene_text)
+        start_game
     elsif user_input == "no"
-        puts "Suit yourself weakling. Dueces!"
+        end_game
     else
         puts "It's a yes or no question dumb dumb. Try again!"
         will_play?
     end
 end
 
+def end_game
+    puts "Suit yourself weakling. Dueces!"
+end
+
 def start_game
     puts Scene.first.scene_text
 end
 
-def choose_option
-    user_input = gets.chomp
-    if user_input == "A"
-        puts #options.path_id
-end
+# def choose_option
+#     user_input = gets.chomp
+#     if user_input == "A"
+#         puts #options.path_id
+# end
 
 
 welcome_message
