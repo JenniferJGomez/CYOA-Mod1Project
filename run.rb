@@ -57,8 +57,7 @@ end
 
 def lose?
     if @current_scene.lose == "true"
-        welcome_message
-        will_play
+        lose_game
     else
         play_scene
         choose_next
@@ -91,7 +90,7 @@ def lose_game
 EOM
     puts death_string
     # Scene.last.scene_text
-    will_play?
+    exit_game
 end
 
 def selects_scene_id
