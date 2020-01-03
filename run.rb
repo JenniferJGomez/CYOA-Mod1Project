@@ -1,10 +1,13 @@
 require_relative './config/environment.rb' 
 require 'pry'
+require 'catpix'
+require_relative './pictures.rb'
 
 @current_scene = nil
 
 def welcome_message
     puts "Welcome to your own Zombie Survival Adventure."
+    welcome_pic
 end
 
 def will_play?
