@@ -26,11 +26,8 @@ def exit_game
     puts "Suit yourself weakling. Dueces!"
 end
 
-def death_break
-    if @current_scene == 
-        welcome_message
-        will_play
-    end
+def exit_as_a_w
+    puts "Thanks for playing"
 end
 
 def start_game
@@ -58,6 +55,8 @@ end
 def lose?
     if @current_scene.lose == "true"
         lose_game
+    elsif @current_scene.lose == "false"
+        win_game
     else
         play_scene
         choose_next
@@ -91,3 +90,23 @@ EOM
     puts death_string
     exit_game
 end
+
+def win_game
+    win_string = <<EOM
+    ▓██   ██▓ ▒█████   █    ██      ██████  █    ██  ██▀███   ██▒   █▓ ██▓ ██▒   █▓▓█████ ▓█████▄ 
+    ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██    ▒  ██  ▓██▒▓██ ▒ ██▒▓██░   █▒▓██▒▓██░   █▒▓█   ▀ ▒██▀ ██▌
+     ▒██ ██░▒██░  ██▒▓██  ▒██░   ░ ▓██▄   ▓██  ▒██░▓██ ░▄█ ▒ ▓██  █▒░▒██▒ ▓██  █▒░▒███   ░██   █▌
+     ░ ▐██▓░▒██   ██░▓▓█  ░██░     ▒   ██▒▓▓█  ░██░▒██▀▀█▄    ▒██ █░░░██░  ▒██ █░░▒▓█  ▄ ░▓█▄   ▌
+     ░ ██▒▓░░ ████▓▒░▒▒█████▓    ▒██████▒▒▒▒█████▓ ░██▓ ▒██▒   ▒▀█░  ░██░   ▒▀█░  ░▒████▒░▒████▓ 
+      ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒    ▒ ▒▓▒ ▒ ░░▒▓▒ ▒ ▒ ░ ▒▓ ░▒▓░   ░ ▐░  ░▓     ░ ▐░  ░░ ▒░ ░ ▒▒▓  ▒ 
+    ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░    ░ ░▒  ░ ░░░▒░ ░ ░   ░▒ ░ ▒░   ░ ░░   ▒ ░   ░ ░░   ░ ░  ░ ░ ▒  ▒ 
+    ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░    ░  ░  ░   ░░░ ░ ░   ░░   ░      ░░   ▒ ░     ░░     ░    ░ ░  ░ 
+    ░ ░         ░ ░     ░              ░     ░        ░           ░   ░        ░     ░  ░   ░    
+    ░ ░                                                          ░            ░           ░        
+EOM
+puts win_string
+exit_as_a_w
+end
+
+welcome_message
+will_play?
