@@ -89,30 +89,5 @@ def lose_game
 *********************************** *********|  |
 EOM
     puts death_string
-    # Scene.last.scene_text
     exit_game
 end
-
-def selects_scene_id
-    user_input = gets.chomp
-    Choice.all.select do |choice|
-      choice.name == user_input
-          return choice.option.scene_id
-        #binding.pry
-    end
-end
-
-
-# def choose_option
-#     user_input = gets.chomp
-#     case user_input
-#     when == winning_game
-#         puts 
-#     when == losing_game
-#         puts lose_game
-#     end 
-# end
-
-# selects_scene_id
-welcome_message
-will_play?
