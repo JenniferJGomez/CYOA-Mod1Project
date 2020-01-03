@@ -26,6 +26,13 @@ def exit_game
     puts "Suit yourself weakling. Dueces!"
 end
 
+def death_break
+    if @current_scene == 
+        welcome_message
+        will_play
+    end
+end
+
 def start_game
     @current_scene = Scene.first
 end
@@ -39,11 +46,23 @@ end
 
 def choose_next
   user_input = gets.chomp.to_i
-    #if user_input == "2"
-      #binding.pry
-      @current_scene = Scene.all[key == user_input]
-      play_scene
+    if user_input != 1 && user_input != 2
+      puts "Please enter 1 or 2"
       choose_next
+    else
+      @current_scene = @current_scene.next_scenes[user_input-1]
+      lose?
+    end
+end
+
+def lose?
+    if @current_scene.lose == "true"
+        welcome_message
+        will_play
+    else
+        play_scene
+        choose_next
+    end
 end
 
 def lose_game
@@ -81,15 +100,6 @@ def selects_scene_id
       choice.name == user_input
           return choice.option.scene_id
         #binding.pry
-    end
-end
-
-def win_or_lose?
-    if selects_scene_id != nil 
-        selects_scene_id
-    else 
-        lose_game 
-        will_play?
     end
 end
 
