@@ -13,6 +13,7 @@ def will_play?
     if user_input == "yes"
         start_game
         play_scene
+        choose_next
     elsif user_input == "no"
         exit_game
     else
@@ -34,6 +35,15 @@ def play_scene
   @current_scene.next_scenes.each_with_index do |scene, index|
     puts "Option #{index + 1}: #{scene.title_text}"
   end
+end
+
+def choose_next
+  user_input = gets.chomp.to_i
+    #if user_input == "2"
+      #binding.pry
+      @current_scene = Scene.all[key == user_input]
+      play_scene
+      choose_next
 end
 
 def lose_game
