@@ -26,11 +26,8 @@ def exit_game
     puts "Suit yourself weakling. Dueces!"
 end
 
-def death_break
-    if @current_scene == 
-        welcome_message
-        will_play
-    end
+def exit_as_a_w
+    puts "Thanks for playing"
 end
 
 def start_game
@@ -58,6 +55,8 @@ end
 def lose?
     if @current_scene.lose == "true"
         lose_game
+    elsif @current_scene.lose == "false"
+        win_game
     else
         play_scene
         choose_next
@@ -89,30 +88,25 @@ def lose_game
 *********************************** *********|  |
 EOM
     puts death_string
-    # Scene.last.scene_text
     exit_game
 end
 
-def selects_scene_id
-    user_input = gets.chomp
-    Choice.all.select do |choice|
-      choice.name == user_input
-          return choice.option.scene_id
-        #binding.pry
-    end
+def win_game
+    win_string = <<EOM
+    ▓██   ██▓ ▒█████   █    ██      ██████  █    ██  ██▀███   ██▒   █▓ ██▓ ██▒   █▓▓█████ ▓█████▄ 
+    ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██    ▒  ██  ▓██▒▓██ ▒ ██▒▓██░   █▒▓██▒▓██░   █▒▓█   ▀ ▒██▀ ██▌
+     ▒██ ██░▒██░  ██▒▓██  ▒██░   ░ ▓██▄   ▓██  ▒██░▓██ ░▄█ ▒ ▓██  █▒░▒██▒ ▓██  █▒░▒███   ░██   █▌
+     ░ ▐██▓░▒██   ██░▓▓█  ░██░     ▒   ██▒▓▓█  ░██░▒██▀▀█▄    ▒██ █░░░██░  ▒██ █░░▒▓█  ▄ ░▓█▄   ▌
+     ░ ██▒▓░░ ████▓▒░▒▒█████▓    ▒██████▒▒▒▒█████▓ ░██▓ ▒██▒   ▒▀█░  ░██░   ▒▀█░  ░▒████▒░▒████▓ 
+      ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒    ▒ ▒▓▒ ▒ ░░▒▓▒ ▒ ▒ ░ ▒▓ ░▒▓░   ░ ▐░  ░▓     ░ ▐░  ░░ ▒░ ░ ▒▒▓  ▒ 
+    ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░    ░ ░▒  ░ ░░░▒░ ░ ░   ░▒ ░ ▒░   ░ ░░   ▒ ░   ░ ░░   ░ ░  ░ ░ ▒  ▒ 
+    ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░    ░  ░  ░   ░░░ ░ ░   ░░   ░      ░░   ▒ ░     ░░     ░    ░ ░  ░ 
+    ░ ░         ░ ░     ░              ░     ░        ░           ░   ░        ░     ░  ░   ░    
+    ░ ░                                                          ░            ░           ░        
+EOM
+puts win_string
+exit_as_a_w
 end
 
-
-# def choose_option
-#     user_input = gets.chomp
-#     case user_input
-#     when == winning_game
-#         puts 
-#     when == losing_game
-#         puts lose_game
-#     end 
-# end
-
-# selects_scene_id
 welcome_message
 will_play?

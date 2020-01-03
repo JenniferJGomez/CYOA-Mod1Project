@@ -10,7 +10,7 @@ s3 = Scene.create(lose: nil, title_text: "They're coming. It's time to run", sce
 s4 = Scene.create(lose: nil, title_text: "Grab baguette", scene_text: "You see your usual porch baguette, decide you need a snack before moving on, and so did the zombies. Now you're dead ya dingus.")
 s5 = Scene.create(lose: nil, title_text: "Grab Ninja Sword", scene_text: "You spot your ninja sword you always leave on your porch like a total badass.")
 s6 = Scene.create(lose: nil, title_text: "Duck behind car", scene_text: "You hide behind a car like the dumb dumb you are and now you're dead ya dingus")
-s7 = Scene.create(lose: nil, title_text: "Fight Back!", scene_text: "You Michonne your way out of the zombie hoard and you survived! ...for now.")
+s7 = Scene.create(lose: "false", title_text: "Fight Back!", scene_text: "You Michonne your way out of the zombie hoard and you survived! ...for now.")
 s8 = Scene.create(lose: "true", title_text: "End Game", scene_text: "Better luck next time, loser.")
 
 
